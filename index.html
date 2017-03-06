@@ -1,6 +1,35 @@
-<!DOCTYPE HTML>
-<HTML>
-<h1>Hello World!!!</h1>
-<p>Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world Hello world </p>
-<img src="http://i1.pixiv.net/c/1200x1200/img-master/img/2017/02/24/23/21/31/61619796_p0_master1200.jpg" alt="pic" >
-</HTML>
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #c7faf0;
+        }
+        button {
+            position:absolute;
+            margin: auto;
+            background-color: #7cd0ef;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 40px;
+        }
+    </style>
+    <title>Button Test</title>
+  </head>
+   
+  <body>
+    <button type="button">Click me!!</button>
+        <script>
+            $(document).ready(function(){
+                $("button").mouseenter(function(){
+                    $(this).css("left","0px");
+                });
+            });
+        </script>
+  </body>
+</html>
