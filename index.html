@@ -1,135 +1,167 @@
-
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>test</title>
+
+<head>
+    <title>test</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="jquery.ripples.js"></script>
+    <script src="animation.js"></script>
+
+    <style>
+        body {
+            background-image: url("網頁底圖.jpg");
+            background-size: cover;
+            margin: 0px;
+            background-repeat: no-repeat;
+            height: 120vh;
+        }
         
-        <style>
-            body {
-                background-image: url("https://lh6.googleusercontent.com/2UIWe46I5qPqH5gnU0cXP7nEyO0dK8SsCotFZdbD7QIfQARJNce6aJWD9D8fsOgC_GCJ153nlM-8kMs=w1600-h721-rw");
-                background-size: cover;
-            }
-            ul {
-                position: fixed;
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                background-color: #272727;
-                width: 100%;
-                top: 0px;
-                left: 0px;
-                box-shadow: 20px 0px 10px #464646;
-                opacity: 0.75;
-            }
-           li {
-                float: right;
-            }
-            li a {
-                z-index: 3;
-                font-size: 1.2em;
-                display: block;
-                color:white;
-                text-align: left;
-                text-decoration: none;
-                padding: 30px 30px 15px 30px;
-                transition: 0.5s;
-            }
-            li a:hover {
-                background-color: #b2b2b2;
-            }
-            li.dropdown:hover .dropdownContent {
-                display: block;
-            }
-            .dropdownContent {
-                display: none;
-                position: absolute;
-                background-color: #3b3b3b;    
-            }
-            
-            #FINtoGO {
-                position: absolute;
-                top: 15%;
-                left: 10%;
-                padding: 5px;
-                width: 350px;
-                text-align: justify;
-                color: white;
-                text-shadow: 2px 2px 5px #393939;
-                }
-            #account {
-                z-index: -2;
-                position: absolute;
-                top: 20%;
-                right: 10%;
-                padding-top: 15px;
-                width: 280px;
-                height: 300px;
-                text-align: center;
-                color: white;
-                border-radius: 20px;
-                background-color: rgba(0,0,0,0.3);
-                text-shadow: 2px 2px 5px #393939;
-                }
-            input[type=text]{
-                padding: 10px 10px;
-                margin-top: 20px;
-                width: 220px;
-                background-color: #c4c4c4;
-                border: 3px solid white;
-                border-radius: 10px;
-                opacity: 0.6;
-                transition: 0.5s;
-                outline: none;
-            }
-            input[type=text]:focus{
-                opacity: 0.9;
-            }
-            input[type=submit]{
-                margin-top: 20px;
-                padding: 10px 10px;
-                width: 245px;
-                height: 45px;
-                background-color: #fcf6b3;
-                border: none;
-                border-radius: 10px;
-                outline: none;
-                transition: 0.5s;
-                font-size: 1.5em;
-                font-weight: bold;
-            }
-            input[type=submit]:hover{
-                background-color: #edc483;
-            }
-        </style>
-    </head>
-    
-    <body>
-        <ul>
-            <li><a href = >CONTACT</a></li>
-            <li class="dropdown"><a href = >SERVICE</a>
-                <div class = "dropdownContent">
-                    <a>emptyempty</a>
-                    <a>emptyempty</a>
-                </div>
-            </li>
-            <li><a href = >ABOUT</a></li>
-            <li><a href = >HOME</a></li>
-        </ul>
+        ul {
+            z-index: 3;
+            position: fixed;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-image: url("點選欄.png");
+            width: 100%;
+            top: 0px;
+            left: 0px;
+            box-shadow: 20px 0px 10px #464646;
+            opacity: 0.75;
+        }
         
-        <div id = "FINtoGO">
-            <h1 style="font-size: 5em">FINtoGO</h1>  
-            <p>The text-align property is used to set the horizontal alignment of a text.A text can be left or right aligned, centered, or justified.The following example shows center aligned, and left and right aligned text (left alignment is default if text direction is left-to-right, and right alignment is default if text direction is right-to-left)</p>
-        </div>
+        li {
+            float: right;
+            z-index: 2;
+        }
         
-        <div id = "account">
-            <h1 style="font-size: 1.5em">Welcome to FINtech</h1> 
-            <form>
-                <input type="text" name="Email" placeholder="Email..."><br>
-                <input type="text" name="pw" placeholder="Password..."><br>
-                <input type="submit" name="Login" value="Login!">
-            </form> 
-        </div>
+        li a {
+            z-index: 2;
+            font-size: 1.2em;
+            display: block;
+            color: white;
+            text-align: left;
+            text-decoration: none;
+            padding: 30px 30px 15px 30px;
+            transition: 0.5s;
+        }
         
-    </body>
+        li a:hover {
+            background-color: #b2b2b2;
+        }
+        
+        li.dropdown:hover .dropdownContent {
+            display: block;
+        }
+        
+        .dropdownContent {
+            display: none;
+            position: absolute;
+            background-color: #3b3b3b;
+        }
+        
+        #FINtoGO {
+            position: absolute;
+            top: 15%;
+            left: 10%;
+            padding: 5px;
+            width: 350px;
+            text-align: justify;
+            color: white;
+            text-shadow: 2px 2px 5px #393939;
+        }
+        
+        #account {
+            z-index: 1;
+            position: absolute;
+            top: 20%;
+            right: 10%;
+            padding-top: 15px;
+            width: 280px;
+            height: 300px;
+            text-align: center;
+            color: white;
+            border-radius: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            text-shadow: 2px 2px 5px #393939;
+        }
+        
+        input[type=text] {
+            padding: 10px 10px;
+            margin-top: 20px;
+            width: 220px;
+            background-color: #c4c4c4;
+            border: 3px solid white;
+            border-radius: 10px;
+            opacity: 0.6;
+            transition: 0.5s;
+            outline: none;
+        }
+        
+        input[type=text]:focus {
+            opacity: 1;
+        }
+        
+        input[type=submit] {
+            margin-top: 20px;
+            padding: 10px 10px;
+            width: 245px;
+            height: 45px;
+            background-color: #fcf6b3;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.5s;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        
+        input[type=submit]:hover {
+            background-color: #edc483;
+        }
+        
+        #sub {
+            color: aliceblue;
+            text-shadow: 2px 2px 2px #b7a8a2;
+        }
+        
+        #wave {
+            position: absolute;
+            bottom: 0px;
+            width: 100%;
+            height: 50%;
+            background-image: url("https://lh4.googleusercontent.com/OTYIxTltN6H7Hb-xaRoT5G-pW98DA84w7f-APCy11SUpUyR_Qi6dS77Ds24KYKk-zWcbz-jb_WIqYXY=w1600-h770-rw");
+            background-position: left bottom;
+            background-size: cover;
+            z-index: -2;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li><a href=>CONTACT</a></li>
+        <li class="dropdown"><a href=>SERVICE</a>
+            <div class="dropdownContent"> <a>emptyempty</a> <a>emptyempty</a> </div>
+        </li>
+        <li><a href=>ABOUT</a></li>
+        <li><a href=>HOME</a></li>
+    </ul>
+    <!--<div id="FINtoGO">
+        <h1 style="font-size: 5em ;font-family: sans-serif;font-style: italic;">FINtoGO</h1>
+        <p>
+        The text-align property is used to set the horizontal alignment of a text.A text can be left or right aligned, centered, or justified.The following example shows center aligned, and left and right aligned text (left alignment is default if text direction is left-to-right, and right alignment is default if text direction is right-to-left)</p>
+    </div>-->
+    <div id="account">
+        <h1 style="font-size: 1.3em ;font-family: sans-serif;">Welcome to FINtech</h1>
+        <form>
+            <input type="text" name="Email" placeholder="Email...">
+            <br>
+            <input type="text" name="pw" placeholder="Password...">
+            <br>
+            <input id="sub" type="submit" name="Login" value="Login!"> </form>
+    </div>
+    <div id="wave"> </div>
+</body>
 
 </html>
